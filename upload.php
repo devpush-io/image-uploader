@@ -1,18 +1,15 @@
 <?php
 
-require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/dbConnect.php';
-
-$message = null;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_FILES['file'])) {
     $filename = $_FILES['file']['name'];
-    $filePath = '/images/' . $filename;
+    $filePath = 'images/' . $filename;
 
     // Store image locally
     move_uploaded_file(
         $_FILES['file']['tmp_name'],
-        __DIR__ . $filePath
+        __DIR__ . '/' . $filePath
     );
 
     // Store the image filepath to the DB
@@ -47,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_FILES['file'])) {
             <div style="max-width: 300px; margin-top: 20px">
                 <h3>Upload Image</h3>
                 <?php
-                if ($message) { ?>
+                if (isset($message)) { ?>
                     <article class="pico-background-black-50 pico-color-white-50">
                         <div><?= $message ?></div>
                     </article>
