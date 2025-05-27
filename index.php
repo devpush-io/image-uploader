@@ -24,7 +24,7 @@ $images = $pdoStatement->fetchAll(PDO::FETCH_ASSOC); ?>
             <h1>Image Uploader</h1>
         </header>
         <main>
-            <a href="/upload.php">Upload Image</a>
+            <a href="upload.php">Upload Image</a>
             <div>
                 <?php
                 foreach ($images as $image): ?>

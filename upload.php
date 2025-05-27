@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_FILES['file'])) {
     <body>
         <header>
             <h1>Image Project</h1>
-            <a href="/">Go Back</a>
+            <a href="index.php">Go Back</a>
         </header>
         <main>
             <div style="max-width: 300px; margin-top: 20px">
